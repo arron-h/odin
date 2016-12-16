@@ -8,7 +8,7 @@ local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
 
 function _user_host() {
   if [[ -n $SSH_CONNECTION ]]; then
-    me="%n@%m"
+    me="@%m"
   elif [[ $LOGNAME != $USER ]]; then
     me="%n"
   fi

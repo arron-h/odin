@@ -2,7 +2,7 @@
 PROMPT=' $(_user_host)%{$fg[magenta]%}%c $(git_prompt_status)%{$reset_color%}→ '
 
 # The right-hand prompt
-RPROMPT='$(git_prompt_info)%{$reset_color%}%{$fg[magenta]%}$(_git_time_since_commit) ${_return_status}'
+RPROMPT='$(git_prompt_info)$(svn_prompt_info)%{$reset_color%}%{$fg[magenta]%}$(_git_time_since_commit) ${_return_status}'
 
 local _return_status="%{$fg[red]%}%(?..⍉)%{$reset_color%}"
 
@@ -22,17 +22,22 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✗ %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%}◒ "
 ZSH_THEME_GIT_PROMPT_CLEAN=" "
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%}✓ "
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}✓ "
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%}⚑ "
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖ "
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}➜ "
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[red]%}➜ "
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[cyan]%}§ "
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[blue]%}𝝙 "
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[yellow]%}↥ "
 
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[green]%}"
 ZSH_THEME_GIT_TIME_SHORT_COMMIT_MEDIUM="%{$fg[yellow]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_LONG="%{$fg[red]%}"
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_NEUTRAL="%{$fg[white]%}"
+
+ZSH_THEME_SVN_PROMPT_PREFIX="%{$fg[blue]%}svn:%{$fg[green]%}"
+ZSH_THEME_SVN_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_SVN_PROMPT_DIRTY=" %{$fg[red]%}✗"
+ZSH_THEME_SVN_PROMPT_CLEAN=" "
 
 #
 # Determine the time since last commit. If branch is clean,
